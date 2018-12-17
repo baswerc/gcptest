@@ -5,6 +5,6 @@ public class TestOne
   @Test
   public void test()
   {
-    System.out.println("TEST");
+    System.out.println("TESTxmm");
   }
 }
