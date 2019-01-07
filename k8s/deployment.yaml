@@ -5,7 +5,6 @@ metadata:
 spec:
   replicas: 3
   minReadySeconds: 30
-  strategy: "RollingUpdate"
   template:
     metadata:
       name: gcptest
