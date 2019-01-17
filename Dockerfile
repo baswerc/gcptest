@@ -4,6 +4,7 @@ COPY src /tmp/src/
 WORKDIR /tmp/
 RUN mvn package
 
-FROM tomcat:9.0-jre8-alpine
+# FROM tomcat:9.0-jre8-alpine
+FROM 7.0.88-jre8-alpine
 RUN rm -Rf /usr/local/tomcat/webapps/ROOT
 COPY --from=MAVEN_TOOL_CHAIN /tmp/target/gcptest*.war $CATALINA_HOME/webapps/ROOT.war
