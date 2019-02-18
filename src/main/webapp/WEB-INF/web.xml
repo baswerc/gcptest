@@ -27,4 +27,15 @@
     <servlet-name>ErrorServlet</servlet-name>
     <url-pattern>/error</url-pattern>
   </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>PrimesServlet</servlet-name>
+    <servlet-class>gov.nasa.gcptest.PrimesServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PrimesServlet</servlet-name>
+    <url-pattern>/primes</url-pattern>
+  </servlet-mapping>
+
 </web-app>
