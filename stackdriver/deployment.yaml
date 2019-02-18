@@ -1,0 +1,19 @@
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: gcptest
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: gcptest
+      labels:
+        app: gcptest
+    spec:
+      containers:
+        - name: gcptest
+          image: gcr.io/macs-engineering/gcptest@sha256:1ee9d82de7dc7817bab07131c68e5763b496f096fb7617e58c9bb75e02c0f2c6
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8080

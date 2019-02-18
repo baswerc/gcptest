@@ -1,0 +1,11 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: gcptest-in
+  annotations:
+    ingress.kubernetes.io/rewrite-target: "/"
+    kubernetes.io/ingress.global-static-ip-name: "stackdrivertest"
+spec:
+  backend:
+    serviceName: gcptest-service
+    servicePort: 80
