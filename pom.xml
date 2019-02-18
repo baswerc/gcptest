@@ -26,15 +26,15 @@
     </dependency>
 
     <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>1.7.25</version>
+      <groupId>net.logstash.logback</groupId>
+      <artifactId>logstash-logback-encoder</artifactId>
+      <version>5.3</version>
     </dependency>
-
+    <!-- Your project must also directly depend on either logback-classic or logback-access.  For example: -->
     <dependency>
-      <groupId>com.google.cloud</groupId>
-      <artifactId>google-cloud-logging-logback</artifactId>
-      <version>0.77.0-alpha</version>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.2.3</version>
     </dependency>
 
     <dependency>
