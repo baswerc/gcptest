@@ -38,4 +38,12 @@
     <url-pattern>/primes</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>Trace1Servlet</servlet-name>
+    <servlet-class>gov.nasa.gcptest.Trace1Servlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Trace1Servlet</servlet-name>
+    <url-pattern>/trace1</url-pattern>
+  </servlet-mapping>
 </web-app>
