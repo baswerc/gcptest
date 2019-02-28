@@ -18,6 +18,8 @@ public class CloseConnectionFilter implements Filter
     HttpServletResponse response = (HttpServletResponse) servletResponse;
     response.addHeader("Connection", "close");
     filterChain.doFilter(servletRequest, servletResponse);
+    response.setHeader("Connection", "close");
+    response.setHeader("a", "b");
   }
 
   @Override
