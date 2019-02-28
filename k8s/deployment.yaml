@@ -4,7 +4,7 @@ metadata:
   name: gcptest
 spec:
   replicas: 4
-  minReadySeconds: 10
+  minReadySeconds: 5
   strategy:
     type: RollingUpdate
     rollingUpdate:
