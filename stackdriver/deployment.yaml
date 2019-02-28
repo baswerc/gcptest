@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
         - name: gcptest
-          image: gcr.io/macs-engineering/gcptest@sha256:a645e1d595a19b6a32ecb73b9189086d07a53cae20e8044c439b76df688dd55b
+          image: gcr.io/macs-engineering/gcptest@sha256:55397aa29ca5160cea9cc5f0a30c64cb4d60bd820482e98718cbb8f0a2e47820
           imagePullPolicy: Always
           ports:
             - name: http

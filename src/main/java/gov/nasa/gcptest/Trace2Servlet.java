@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Random;
 
-public class Trace1Servlet extends HttpServlet
+public class Trace2Servlet extends HttpServlet
 {
 
   private Tracer tracer;
@@ -32,9 +32,9 @@ public class Trace1Servlet extends HttpServlet
       tracer = Tracing.getTracer();
     }
 
-    try (Scope ss  = tracer.spanBuilder("GetUserAccountInfo").setSampler(Samplers.alwaysSample()).startScopedSpan())
+    try (Scope ss  = tracer.spanBuilder("ListDocuments").setSampler(Samplers.alwaysSample()).startScopedSpan())
     {
-      tracer.getCurrentSpan().addAnnotation("Pulling account info from DB");
+      tracer.getCurrentSpan().addAnnotation("Pulling documents from DB");
       try
       {
         Thread.sleep(random.nextInt(5000));
@@ -43,21 +43,22 @@ public class Trace1Servlet extends HttpServlet
       {}
 
 
-      tracer.getCurrentSpan().addAnnotation("Loading social profile");
+      tracer.getCurrentSpan().addAnnotation("Filtering inactive documents");
       try
       {
-        Thread.sleep(random.nextInt(15000));
+        Thread.sleep(random.nextInt(2500));
       }
       catch (InterruptedException e)
       {}
 
-      tracer.getCurrentSpan().addAnnotation("Loading social profile");
+      tracer.getCurrentSpan().addAnnotation("Encoding to JSON");
       try
       {
-        Thread.sleep(random.nextInt(15000));
+        Thread.sleep(random.nextInt(1000));
       }
       catch (InterruptedException e)
       {}
+
 
       if (random.nextInt(10) == 5)
       {
@@ -68,6 +69,5 @@ public class Trace1Servlet extends HttpServlet
         tracer.getCurrentSpan().setStatus(Status.OK);
       }
     }
-
   }
 }
